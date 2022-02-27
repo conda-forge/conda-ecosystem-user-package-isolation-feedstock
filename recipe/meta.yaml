@@ -14,7 +14,8 @@ test:
 
 about:
   home: http://conda-forge.org/
-  license: BSD
+  license: BSD-3-Clause
+  license_file: ../License.txt
   summary: 'Prevent Python and R from searching for packages outside of the current environment'
 
 extra:
