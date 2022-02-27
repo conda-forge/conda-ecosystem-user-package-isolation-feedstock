@@ -7,10 +7,10 @@ build:
 
 test:
   commands:
-    - test "$PYTHONNOUSERSITE" == "1"		# [unix]
-    - test "$R_LIBS_USER" == "-"  		# [unix]
-    - if not defined PYTHONNOUSERSITE exit 1	# [win]
-    - if %PYTHONNOUSERSITE% NEQ 1 exit 1	# [win]
+    - test "$PYTHONNOUSERSITE" == "1"         # [unix]
+    - test "$R_LIBS_USER" == "-"              # [unix]
+    - if not defined PYTHONNOUSERSITE exit 1  # [win]
+    - if %PYTHONNOUSERSITE% NEQ 1 exit 1      # [win]
 
 about:
   home: http://conda-forge.org/
