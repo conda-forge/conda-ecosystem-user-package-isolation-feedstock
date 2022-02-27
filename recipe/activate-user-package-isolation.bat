@@ -1,4 +1,4 @@
-if not defined %CONDA_USER_PACKAGE_ISOLATION% (
+if not defined CONDA_USER_PACKAGE_ISOLATION (
    REM Initialize counter
    set CONDA_USER_PACKAGE_ISOLATION=0
    REM Ignore python packages installed into the user's home directory
