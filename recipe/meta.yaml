@@ -3,19 +3,21 @@ package:
   version: 1.0
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
 
 test:
   commands:
-    - test "$PYTHONNOUSERSITE" == "1"
-    - test "$R_LIBS_USER" == "-"
+    - test "$PYTHONNOUSERSITE" == "1"		# [unix]
+    - test "$R_LIBS_USER" == "-"  		# [unix]
+    - if not defined PYTHONNOUSERSITE exit 1	# [win]
+    - if %PYTHONNOUSERSITE% NEQ 1 exit 1	# [win]
 
 about:
   home: http://conda-forge.org/
   license: BSD
-  summary: 'Prevent python and R from searching for packages outside of the current environment'
+  summary: 'Prevent Python and R from searching for packages outside of the current environment'
 
 extra:
   recipe-maintainers:
     - fgp
+    - mfansler
