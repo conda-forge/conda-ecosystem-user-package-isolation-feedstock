@@ -9,8 +9,8 @@ test:
   commands:
     - test "$PYTHONNOUSERSITE" == "1"         # [unix]
     - test "$R_LIBS_USER" == "-"              # [unix]
-    - test -f "$PREFIX/etc/conda/activate.d/user-package-isolation.fish"   # [unix]
-    - test -f "$PREFIX/etc/conda/deactivate.d/user-package-isolation.fish" # [unix]
+    - test -f "$PREFIX/etc/conda/activate.d/user-package-isolation.fish"    # [unix]
+    - test -f "$PREFIX/etc/conda/deactivate.d/user-package-isolation.fish"  # [unix]
     - if not defined PYTHONNOUSERSITE exit 1  # [win]
     - if %PYTHONNOUSERSITE% NEQ 1 exit 1      # [win]
     - if not defined R_LIBS_USER exit 1       # [win]
