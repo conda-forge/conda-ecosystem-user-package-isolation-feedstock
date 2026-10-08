@@ -6,3 +6,7 @@ cp $RECIPE_DIR/deactivate-user-package-isolation.sh $PREFIX/etc/conda/deactivate
 # Fish shell support
 cp $RECIPE_DIR/activate-user-package-isolation.fish $PREFIX/etc/conda/activate.d/user-package-isolation.fish
 cp $RECIPE_DIR/deactivate-user-package-isolation.fish $PREFIX/etc/conda/deactivate.d/user-package-isolation.fish
+
+# Nushell support
+cp $RECIPE_DIR/activate-user-package-isolation.nu $PREFIX/etc/conda/activate.d/user-package-isolation.nu
+cp $RECIPE_DIR/deactivate-user-package-isolation.nu $PREFIX/etc/conda/deactivate.d/user-package-isolation.nu

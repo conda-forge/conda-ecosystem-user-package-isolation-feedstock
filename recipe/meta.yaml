@@ -3,7 +3,7 @@ package:
   version: "1.0"
 
 build:
-  number: 2
+  number: 3
 
 test:
   commands:
@@ -11,10 +11,14 @@ test:
     - test "$R_LIBS_USER" == "-"              # [unix]
     - test -f "$PREFIX/etc/conda/activate.d/user-package-isolation.fish"    # [unix]
     - test -f "$PREFIX/etc/conda/deactivate.d/user-package-isolation.fish"  # [unix]
+    - test -f "$PREFIX/etc/conda/activate.d/user-package-isolation.nu"      # [unix]
+    - test -f "$PREFIX/etc/conda/deactivate.d/user-package-isolation.nu"    # [unix]
     - if not defined PYTHONNOUSERSITE exit 1  # [win]
     - if %PYTHONNOUSERSITE% NEQ 1 exit 1      # [win]
     - if not defined R_LIBS_USER exit 1       # [win]
     - if not %R_LIBS_USER%=="-" exit 1        # [win]
+    - if not exist %PREFIX%\etc\conda\activate.d\user-package-isolation.nu exit 1    # [win]
+    - if not exist %PREFIX%\etc\conda\deactivate.d\user-package-isolation.nu exit 1  # [win]
 
 about:
   home: http://conda-forge.org/
